@@ -88,4 +88,48 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true" />
 
+    <TextView
+        android:text="Accelerometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/t_lightAcc"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="No Accuracy Changes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/t_lightAcc"
+        android:layout_marginTop="13dp"
+        android:id="@+id/t_accelerometerAcc" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/t_accelerometerAcc"
+        android:layout_alignEnd="@+id/textview423"
+        android:id="@+id/t_acelerometerX" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t_acelerometerX"
+        android:layout_alignStart="@+id/t_acelerometerX"
+        android:layout_marginTop="16dp"
+        android:id="@+id/t_acelerometerY" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/t_acelerometerZ"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/t_acelerometerY"
+        android:layout_alignStart="@+id/t_acelerometerY" />
+
 </RelativeLayout>

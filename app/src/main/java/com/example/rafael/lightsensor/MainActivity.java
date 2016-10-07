@@ -17,8 +17,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     private SensorManager mSensorManager;
     private Sensor mLight, mAccelerometer;
-    private TextView tv_lumens;
-    private TextView tv_lightAcc;
+    private TextView tv_lumens, tv_lightAcc, tv_accelerometerAcc,tv_accelerometerX, tv_accelerometerY, tv_accelerometerZ;
 
 
     public final static String EXTRA_MESSAGE = "com.example.rafael.lightsensor.MESSAGE";
@@ -30,6 +29,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
         this.tv_lumens = (TextView) findViewById(R.id.t_lumens);
         this.tv_lightAcc = (TextView) findViewById(R.id.t_lightAcc);
+        this.tv_accelerometerAcc = (TextView) findViewById(R.id.t_accelerometerAcc);
+        this.tv_accelerometerX = (TextView) findViewById(R.id.t_acelerometerX);
+        this.tv_accelerometerY = (TextView) findViewById(R.id.t_acelerometerY);
+        this.tv_accelerometerZ = (TextView) findViewById(R.id.t_acelerometerZ);
 
         //Keep the screen on
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         // a particular sensor.
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         mLight = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 
     @Override
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             case(Sensor.TYPE_LIGHT):
                 tv_lightAcc.setText("Accuracy Changed to " + accuracy);
                 break;
+            case(Sensor.TYPE_ACCELEROMETER):
+                tv_accelerometerAcc.setText("Accuracy Changed to " + accuracy);
+                break;
             default:
         }
 
@@ -60,10 +67,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public final void onSensorChanged(SensorEvent event) {
-        //tv_lumens.setText("Sensor Changed !!!!!!!!");
-        float lumens = event.values[0];
-        // Do something with this sensor data.
-        tv_lumens.setText(Float.toString(lumens));
+        switch (event.sensor.getType()){
+            case(Sensor.TYPE_LIGHT):
+                float lumens = event.values[0];
+                tv_lumens.setText(Float.toString(lumens));
+                break;
+            case(Sensor.TYPE_ACCELEROMETER):
+                tv_accelerometerX.setText(Float.toString(event.values[0]));
+                tv_accelerometerY.setText(Float.toString(event.values[1]));
+                tv_accelerometerZ.setText(Float.toString(event.values[2]));
+                break;
+            default:
+        }
+
     }
 
     @Override
@@ -71,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         // Register a listener for the sensor.
         super.onResume();
         mSensorManager.registerListener(this, mLight, SensorManager.SENSOR_DELAY_NORMAL);
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
