@@ -132,4 +132,106 @@
         android:layout_below="@+id/t_acelerometerY"
         android:layout_alignStart="@+id/t_acelerometerY" />
 
+    <TextView
+        android:text="Longitude:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView6" />
+
+    <TextView
+        android:text="longi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignStart="@+id/t_latitudeGPS"
+        android:id="@+id/t_longitudeGPS" />
+
+    <TextView
+        android:text="Altura (m):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+    <TextView
+        android:text="altu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView8"
+        android:layout_alignStart="@+id/t_longitudeGPS"
+        android:id="@+id/t_alturaGPS" />
+
+    <TextView
+        android:text="latit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/t_latitudeGPS"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:text="latit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/t_latitudeGPS"
+        android:layout_alignStart="@+id/textView10"
+        android:id="@+id/t_latitudeNet" />
+
+    <TextView
+        android:text="longi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/t_longitudeGPS"
+        android:layout_alignStart="@+id/t_latitudeNet"
+        android:id="@+id/t_longitudeNet" />
+
+    <TextView
+        android:text="altu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/t_alturaGPS"
+        android:layout_alignStart="@+id/t_longitudeNet"
+        android:id="@+id/t_alturaNet" />
+
+    <TextView
+        android:text="Latitude:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_alignBaseline="@+id/t_latitudeGPS"
+        android:layout_alignBottom="@+id/t_latitudeGPS"
+        android:layout_toStartOf="@+id/t_acelerometerZ" />
+
+    <TextView
+        android:text="GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/t_lumens" />
+
+    <TextView
+        android:text="Network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView10"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:text="permi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/t_alturaGPS"
+        android:layout_toEndOf="@+id/textview423"
+        android:layout_marginTop="12dp"
+        android:id="@+id/t_permission" />
+
 </RelativeLayout>
