@@ -234,4 +234,13 @@
         android:layout_marginTop="12dp"
         android:id="@+id/t_permission" />
 
+    <Button
+        android:text="@string/button_touch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_touch"
+        android:layout_above="@+id/button"
+        android:layout_alignEnd="@+id/t_alturaNet"
+        android:onClick="touchScreen" />
+
 </RelativeLayout>

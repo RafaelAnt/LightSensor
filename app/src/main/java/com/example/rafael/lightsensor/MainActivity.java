@@ -158,8 +158,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     public final void onSensorChanged(SensorEvent event) {
         switch (event.sensor.getType()) {
             case (Sensor.TYPE_LIGHT):
-                float lumens = event.values[0];
-                tv_lumens.setText(Float.toString(lumens));
+                float lux = event.values[0];
+                tv_lumens.setText(Float.toString(lux));
                 break;
             case (Sensor.TYPE_ACCELEROMETER):
                 tv_accelerometerX.setText(Float.toString(event.values[0]));
@@ -228,5 +228,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+    }
+
+    public void touchScreen (View view){
+        Intent intent = new Intent(this, TouchScreenActivity.class);
+        startActivity(intent);
+
     }
 }
