@@ -13,6 +13,9 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class MyGLRenderer implements GLSurfaceView.Renderer {
 
+    public volatile float mAngle;
+    private Line mLine;
+
     public void onSurfaceCreated(GL10 unused, EGLConfig config) {
         // Set the background frame color
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -25,5 +28,20 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     public void onSurfaceChanged(GL10 unused, int width, int height) {
         GLES20.glViewport(0, 0, width, height);
+    }
+
+    public float getAngle() {
+        return mAngle;
+    }
+
+    public void setAngle(float angle) {
+        mAngle = angle;
+    }
+
+    public void drawLine(float x, float y){
+        float coords [] = {};
+        float color [] = {1,0,0,0};
+        mLine = new Line(coords ,color);
+        GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
     }
 }
