@@ -3,6 +3,7 @@ package com.example.rafael.lightsensor;
 import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 import android.view.MotionEvent;
 
 /**
@@ -23,12 +24,15 @@ class MyGLSurfaceView extends GLSurfaceView {
         setEGLContextClientVersion(2);
 
         mRenderer = new MyGLRenderer();
-
-        // Render the view only when there is a change in the drawing data
-        //setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+        Log.d("RENDERER","Criou o Renderer");
 
         // Set the Renderer for drawing on the GLSurfaceView
         setRenderer(mRenderer);
+
+        // Render the view only when there is a change in the drawing data
+        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+
+
     }
 
     @Override
@@ -60,7 +64,7 @@ class MyGLSurfaceView extends GLSurfaceView {
                         mRenderer.getAngle() +
                                 ((dx + dy) * TOUCH_SCALE_FACTOR));*/
 
-                mRenderer.teste();
+                mRenderer.drawLine(dx,dy);
                 requestRender();
         }
 
