@@ -1,7 +1,6 @@
 package com.example.rafael.lightsensor;
 
 import android.content.Context;
-import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -21,10 +20,10 @@ class MyGLSurfaceView extends GLSurfaceView {
         super(context);
 
         // Create an OpenGL ES 2.0 context
-        setEGLContextClientVersion(2);
+        setEGLContextClientVersion(3);
 
         mRenderer = new MyGLRenderer();
-        Log.d("RENDERER","Criou o Renderer");
+        //Log.d("RENDERER","Criou o Renderer");
 
         // Set the Renderer for drawing on the GLSurfaceView
         setRenderer(mRenderer);
@@ -60,11 +59,11 @@ class MyGLSurfaceView extends GLSurfaceView {
                     dy = dy * -1 ;
                 }
 
-               /* mRenderer.setAngle(
+                mRenderer.setAngle(
                         mRenderer.getAngle() +
-                                ((dx + dy) * TOUCH_SCALE_FACTOR));*/
+                                ((dx + dy) * TOUCH_SCALE_FACTOR));
 
-                mRenderer.drawLine(dx,dy);
+                //mRenderer.drawLine(dx,dy);
                 requestRender();
         }
 
