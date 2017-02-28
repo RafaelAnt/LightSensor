@@ -1,35 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rafael.lightsensor">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
-    <!--supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" /-->
+    <uses-feature
+        android:glEsVersion="0x00030001"
+        android:required="true" />
 
+    <!--
+    supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" /
+    -->
     <!-- uses-feature android:name="android.hardware.location.gps" / -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        >
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".DisplayMessageActivity" />
-        <activity android:name=".TouchScreenActivity"></activity>
+        <activity android:name=".TouchScreenActivity" />
+        <activity
+            android:name=".drawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
-
 
 </manifest> <!-- android:debuggable="true" -->
